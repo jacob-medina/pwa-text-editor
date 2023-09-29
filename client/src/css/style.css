@@ -8,6 +8,10 @@
   --navbar-height: 50px;
 }
 
+.invisible {
+  visibility: hidden;
+}
+
 body {
   margin: 0;
   background-color: var(--monoaki);
@@ -15,6 +19,7 @@ body {
     Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
 }
+
 
 h1 {
   font-size: 22px;
@@ -32,6 +37,7 @@ h1 {
   font-weight: 550;
   letter-spacing: 0.9px;
 }
+
 
 .navbar-brand img {
   padding-top: 10px;
