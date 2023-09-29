@@ -26,20 +26,20 @@ warmStrategyCache({
 
 registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 
-const STATIC_ASSETS = ['script', 'style', 'document', 'font', 'image'];
+const STATIC_ASSETS = ['script', 'style', 'document', 'font', 'image', 'manifest'];
 
 // static asset caching
 registerRoute(
   ({ request }) => STATIC_ASSETS.includes(request.destination),
   new StaleWhileRevalidate({
     cacheName: 'static-assets',
-    plugins: [
-      new CacheableResponsePlugin({
-        statuses: [0, 200],
-      }),
-      new ExpirationPlugin({
-        maxAgeSeconds: 30 * 24 * 60 * 60,  // assets expire after 30 days
-      }),
-    ],
+    // plugins: [
+    //   new CacheableResponsePlugin({
+    //     statuses: [0, 200],
+    //   }),
+    //   new ExpirationPlugin({
+    //     maxAgeSeconds: 30 * 24 * 60 * 60,  // assets expire after 30 days
+    //   }),
+    // ],
   })
 );
